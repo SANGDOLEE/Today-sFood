@@ -23,7 +23,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView! // 음식 변경 버튼
     
-    var searchFood = Food.FoodList[0]
+    
+    var num = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,10 +46,11 @@ class ViewController: UIViewController {
 
     // 네이버 지도로 검색
     @IBAction func goNaver(_ sender: UIButton) {
-        var result = searchFood.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) // 인코딩된 장소 URL
+        let searchFood = Food.FoodList[num]
+        let result = searchFood.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) // 인코딩된 장소 URL
         
-        var url = URL(string:"nmap://search?query=\(result!)&appname=com.sangdolee.choeatce")! // 장소 URL
-        var appStoreURL = URL(string: "http://itunes.apple.com/app/id311867728?mt=8")! // 네이버지도 AppStore URL
+        let url = URL(string:"nmap://search?query=\(result!)&appname=com.sangdolee.choeatce")! // 장소 URL
+        let appStoreURL = URL(string: "http://itunes.apple.com/app/id311867728?mt=8")! // 네이버지도 AppStore URL
         
         if UIApplication.shared.canOpenURL(url){
             UIApplication.shared.open(url)
@@ -65,10 +67,12 @@ class ViewController: UIViewController {
     
 
     // 메뉴 변경
-    @objc func changeMenuButton() {
+    @objc func changeMenuButton() -> Int {
         
-         foodName.text = Food.FoodList.randomElement()!
-         
+         // foodName.text = Food.FoodList.randomElement()!
+        num = Int.random(in: 1...Food.FoodList.count-1)
+        foodName.text = Food.FoodList[num]
+        return num
     }
     
     
