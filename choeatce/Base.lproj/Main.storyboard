@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PUB-E2-F7a">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--메인화면-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="메인화면" id="BYZ-38-t0r" customClass="ViewController" customModule="choeatce" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="맥도날드" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOX-ie-FVF">
+                                <rect key="frame" x="76.666666666666686" y="183" width="240" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Qf7-6j-mjh"/>
+                                    <constraint firstAttribute="height" constant="100" id="rcU-wA-aQ4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main.png" translatesAutoresizingMaskIntoConstraints="NO" id="eXz-f2-oR3">
+                                <rect key="frame" x="76.666666666666686" y="233" width="240" height="303"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="LbG-wR-f1J"/>
+                                    <constraint firstAttribute="height" constant="303" id="jka-iM-EGQ"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYR-6a-1R2">
+                                <rect key="frame" x="130" y="561" width="133" height="40"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Search">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="21"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="1zp-bJ-C7M" kind="show" id="7Xm-cM-Q1D"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JOX-ie-FVF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="76.670000000000002" id="0CN-O4-3JV"/>
+                            <constraint firstItem="eXz-f2-oR3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BKU-lt-rcz"/>
+                            <constraint firstItem="eXz-f2-oR3" firstAttribute="top" secondItem="JOX-ie-FVF" secondAttribute="bottom" constant="-50" id="IVm-Qy-PJn"/>
+                            <constraint firstItem="JOX-ie-FVF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="OSM-AW-9GN"/>
+                            <constraint firstItem="lYR-6a-1R2" firstAttribute="top" secondItem="eXz-f2-oR3" secondAttribute="bottom" constant="25" id="Wvz-in-umo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lYR-6a-1R2" secondAttribute="trailing" constant="130" id="brU-Gh-ifh"/>
+                            <constraint firstItem="lYR-6a-1R2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="130" id="oCE-hT-58S"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JOX-ie-FVF" secondAttribute="trailing" constant="76.329999999999998" id="pe6-4D-pmt"/>
+                            <constraint firstItem="lYR-6a-1R2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rBk-Sp-Jdw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ot5-eG-4lH">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="gaG-gG-DDa">
+                            <color key="tintColor" systemColor="systemOrangeColor"/>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="980.91603053435108" y="-34.507042253521128"/>
+        </scene>
+        <!--지도화면-->
+        <scene sceneID="aTg-yQ-I3Y">
+            <objects>
+                <viewController title="지도화면" id="1zp-bJ-C7M" customClass="MapsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PuB-EA-r9W">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fx0-fF-cfS" customClass="MKMapView">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="srf-CC-V81"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fx0-fF-cfS" firstAttribute="leading" secondItem="srf-CC-V81" secondAttribute="leading" id="3Pi-IH-A48"/>
+                            <constraint firstItem="srf-CC-V81" firstAttribute="trailing" secondItem="fx0-fF-cfS" secondAttribute="trailing" id="Bvz-sI-Iyo"/>
+                            <constraint firstItem="fx0-fF-cfS" firstAttribute="top" secondItem="srf-CC-V81" secondAttribute="top" id="TBe-8U-DBJ"/>
+                            <constraint firstItem="srf-CC-V81" firstAttribute="bottom" secondItem="fx0-fF-cfS" secondAttribute="bottom" id="hMA-Og-Znl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5Kt-ds-wMy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="05S-io-U47" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1961" y="-35"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0PA-tw-6F2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PUB-E2-F7a" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="d36-3d-zWO">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="BP8-1o-4Ov"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="476-xB-UEF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="54.198473282442748" y="-34.507042253521128"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="main.png" width="384" height="384"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
