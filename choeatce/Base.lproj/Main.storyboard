@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="맥도날드" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOX-ie-FVF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOX-ie-FVF">
                                 <rect key="frame" x="76.666666666666686" y="183" width="240" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="Qf7-6j-mjh"/>
@@ -35,30 +35,71 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYR-6a-1R2">
-                                <rect key="frame" x="130" y="561" width="133" height="40"/>
+                                <rect key="frame" x="130" y="768" width="133" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Fim-Dd-qlq"/>
+                                    <constraint firstAttribute="width" constant="133" id="qLO-Un-KhY"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Search">
+                                <buttonConfiguration key="configuration" style="filled" title="NaverMap">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="21"/>
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseForegroundColor" systemColor="systemRedColor"/>
                                     <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="1zp-bJ-C7M" kind="show" id="7Xm-cM-Q1D"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="vWU-xW-QDv">
+                                <rect key="frame" x="47" y="546" width="299" height="39.333333333333371"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x55-HO-1Dp">
+                                        <rect key="frame" x="0.0" y="0.0" width="146" height="39.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Naver maps">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="goNaver:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h9o-PN-ycL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NyR-Fp-YhA">
+                                        <rect key="frame" x="153" y="0.0" width="146" height="39.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="KaKao maps">
+                                            <color key="titleColor" systemColor="labelColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="goKakao:" destination="BYZ-38-t0r" eventType="touchUpInside" id="StC-IJ-FaU"/>
+                                            <action selector="goNaver:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NvO-oL-1Mh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="299" id="Mmo-zU-KIe"/>
+                                    <constraint firstItem="NyR-Fp-YhA" firstAttribute="width" secondItem="x55-HO-1Dp" secondAttribute="width" id="nDk-pa-PXJ"/>
+                                    <constraint firstAttribute="height" constant="39.329999999999998" id="tGP-li-EXK"/>
+                                </constraints>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="menu.png" translatesAutoresizingMaskIntoConstraints="NO" id="lBY-Kf-hd4">
+                                <rect key="frame" x="170" y="678" width="52" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="JOX-ie-FVF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="76.670000000000002" id="0CN-O4-3JV"/>
+                            <constraint firstItem="vWU-xW-QDv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="50e-1i-r5B"/>
                             <constraint firstItem="eXz-f2-oR3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BKU-lt-rcz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lYR-6a-1R2" secondAttribute="bottom" constant="10" id="Hb8-aG-Apf"/>
+                            <constraint firstItem="lYR-6a-1R2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Hm5-gx-oIL"/>
                             <constraint firstItem="eXz-f2-oR3" firstAttribute="top" secondItem="JOX-ie-FVF" secondAttribute="bottom" constant="-50" id="IVm-Qy-PJn"/>
                             <constraint firstItem="JOX-ie-FVF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="OSM-AW-9GN"/>
-                            <constraint firstItem="lYR-6a-1R2" firstAttribute="top" secondItem="eXz-f2-oR3" secondAttribute="bottom" constant="25" id="Wvz-in-umo"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lYR-6a-1R2" secondAttribute="trailing" constant="130" id="brU-Gh-ifh"/>
-                            <constraint firstItem="lYR-6a-1R2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="130" id="oCE-hT-58S"/>
+                            <constraint firstItem="vWU-xW-QDv" firstAttribute="top" secondItem="eXz-f2-oR3" secondAttribute="bottom" constant="10" id="pdS-by-2fr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JOX-ie-FVF" secondAttribute="trailing" constant="76.329999999999998" id="pe6-4D-pmt"/>
-                            <constraint firstItem="lYR-6a-1R2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rBk-Sp-Jdw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ot5-eG-4lH">
@@ -66,6 +107,13 @@
                             <color key="tintColor" systemColor="systemOrangeColor"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="KaKaoMapsButton" destination="NyR-Fp-YhA" id="fYm-B8-4wJ"/>
+                        <outlet property="NaverMapsButton" destination="x55-HO-1Dp" id="H7b-xA-6Qp"/>
+                        <outlet property="foodName" destination="JOX-ie-FVF" id="pcM-YF-MOX"/>
+                        <outlet property="goNaverMapApp" destination="x55-HO-1Dp" id="OWe-hB-WbB"/>
+                        <outlet property="imageView" destination="lBY-Kf-hd4" id="0Tm-5m-Q1X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -79,7 +127,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fx0-fF-cfS" customClass="MKMapView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fx0-fF-cfS" customClass="NMFMapView">
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
@@ -120,11 +168,18 @@
     </scenes>
     <resources>
         <image name="main.png" width="384" height="384"/>
+        <image name="menu.png" width="409.60000610351562" height="409.60000610351562"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

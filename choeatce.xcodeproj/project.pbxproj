@@ -15,6 +15,8 @@
 		1F13344D29E418A000095A12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F13344B29E418A000095A12 /* LaunchScreen.storyboard */; };
 		1F13345629E41DDF00095A12 /* AddMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F13345529E41DDF00095A12 /* AddMenu.png */; };
 		1F13345829E427EB00095A12 /* mainImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F13345729E427EB00095A12 /* mainImage.png */; };
+		1F3A3F0729E6892B00D542FC /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A3F0629E6892B00D542FC /* Food.swift */; };
+		1F3A3F0B29E6AD8700D542FC /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F3A3F0A29E6AD8700D542FC /* menu.png */; };
 		1F8CD06429E42D46007286FB /* main.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F8CD06329E42D46007286FB /* main.png */; };
 		1F8CD06629E4312F007286FB /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F8CD06529E4312F007286FB /* search.png */; };
 		6C6C0B8D8C704E4B8B6A842D /* Pods_choeatce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39E058BBE860849A706B6A2A /* Pods_choeatce.framework */; };
@@ -32,6 +34,8 @@
 		1F13344E29E418A000095A12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F13345529E41DDF00095A12 /* AddMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AddMenu.png; sourceTree = "<group>"; };
 		1F13345729E427EB00095A12 /* mainImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainImage.png; sourceTree = "<group>"; };
+		1F3A3F0629E6892B00D542FC /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		1F3A3F0A29E6AD8700D542FC /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		1F8CD06329E42D46007286FB /* main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main.png; sourceTree = "<group>"; };
 		1F8CD06529E4312F007286FB /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
 		39E058BBE860849A706B6A2A /* Pods_choeatce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_choeatce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +79,7 @@
 				1F13344029E418A000095A12 /* AppDelegate.swift */,
 				1F13344229E418A000095A12 /* SceneDelegate.swift */,
 				1F13344429E418A000095A12 /* ViewController.swift */,
+				1F3A3F0629E6892B00D542FC /* Food.swift */,
 				1F13344629E418A000095A12 /* Main.storyboard */,
 				1F13344929E418A000095A12 /* Assets.xcassets */,
 				1F13344B29E418A000095A12 /* LaunchScreen.storyboard */,
@@ -86,6 +91,7 @@
 		1F13345429E41DC900095A12 /* ImageFile */ = {
 			isa = PBXGroup;
 			children = (
+				1F3A3F0A29E6AD8700D542FC /* menu.png */,
 				1F8CD06529E4312F007286FB /* search.png */,
 				1F8CD06329E42D46007286FB /* main.png */,
 				1F13345729E427EB00095A12 /* mainImage.png */,
@@ -100,7 +106,6 @@
 				831AD60EB4A0953B65E470C5 /* Pods-choeatce.debug.xcconfig */,
 				1EB20D66BC671532089E60C2 /* Pods-choeatce.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -174,6 +179,7 @@
 			files = (
 				1F13344D29E418A000095A12 /* LaunchScreen.storyboard in Resources */,
 				1F13344A29E418A000095A12 /* Assets.xcassets in Resources */,
+				1F3A3F0B29E6AD8700D542FC /* menu.png in Resources */,
 				1F8CD06429E42D46007286FB /* main.png in Resources */,
 				1F8CD06629E4312F007286FB /* search.png in Resources */,
 				1F13345829E427EB00095A12 /* mainImage.png in Resources */,
@@ -232,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F13344529E418A000095A12 /* ViewController.swift in Sources */,
+				1F3A3F0729E6892B00D542FC /* Food.swift in Sources */,
 				1F13344129E418A000095A12 /* AppDelegate.swift in Sources */,
 				1F13344329E418A000095A12 /* SceneDelegate.swift in Sources */,
 			);
