@@ -87,24 +87,41 @@
                                 <rect key="frame" x="170" y="678" width="52" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ome-2z-ajY">
+                                <rect key="frame" x="170.66666666666666" y="360" width="52" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="CYQ-KO-smu"/>
+                                    <constraint firstAttribute="width" constant="52" id="ed8-2h-97t"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's Menu ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKp-IZ-JWO">
+                                <rect key="frame" x="81" y="293" width="231" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="JOX-ie-FVF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="76.670000000000002" id="0CN-O4-3JV"/>
+                            <constraint firstItem="nKp-IZ-JWO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="45e-Lt-Q4N"/>
+                            <constraint firstItem="Ome-2z-ajY" firstAttribute="top" secondItem="nKp-IZ-JWO" secondAttribute="bottom" constant="24" id="4OX-9s-FJw"/>
                             <constraint firstItem="vWU-xW-QDv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="50e-1i-r5B"/>
                             <constraint firstItem="eXz-f2-oR3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BKU-lt-rcz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lYR-6a-1R2" secondAttribute="bottom" constant="10" id="Hb8-aG-Apf"/>
                             <constraint firstItem="lYR-6a-1R2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Hm5-gx-oIL"/>
                             <constraint firstItem="eXz-f2-oR3" firstAttribute="top" secondItem="JOX-ie-FVF" secondAttribute="bottom" constant="-50" id="IVm-Qy-PJn"/>
+                            <constraint firstItem="Ome-2z-ajY" firstAttribute="top" secondItem="JOX-ie-FVF" secondAttribute="bottom" constant="77" id="KFj-Er-ErK"/>
                             <constraint firstItem="JOX-ie-FVF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="OSM-AW-9GN"/>
+                            <constraint firstItem="Ome-2z-ajY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bii-pG-phU"/>
                             <constraint firstItem="vWU-xW-QDv" firstAttribute="top" secondItem="eXz-f2-oR3" secondAttribute="bottom" constant="10" id="pdS-by-2fr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JOX-ie-FVF" secondAttribute="trailing" constant="76.329999999999998" id="pe6-4D-pmt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ot5-eG-4lH">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="gaG-gG-DDa">
-                            <color key="tintColor" systemColor="systemOrangeColor"/>
+                            <color key="tintColor" systemColor="systemYellowColor"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -113,6 +130,9 @@
                         <outlet property="foodName" destination="JOX-ie-FVF" id="pcM-YF-MOX"/>
                         <outlet property="goNaverMapApp" destination="x55-HO-1Dp" id="OWe-hB-WbB"/>
                         <outlet property="imageView" destination="lBY-Kf-hd4" id="0Tm-5m-Q1X"/>
+                        <outlet property="mainImage" destination="eXz-f2-oR3" id="sl9-Pf-LnM"/>
+                        <outlet property="startImage" destination="Ome-2z-ajY" id="mOO-hW-Pfr"/>
+                        <outlet property="startTextLabel" destination="nKp-IZ-JWO" id="jTE-3W-sO9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -174,9 +194,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
