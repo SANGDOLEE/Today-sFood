@@ -9,6 +9,7 @@
 	</array>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>kakaomap</string>
 		<string>nmap</string>
 	</array>
 	<key>NMFClientId</key>
