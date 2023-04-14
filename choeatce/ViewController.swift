@@ -11,8 +11,6 @@ import AVFoundation
 
 class ViewController: UIViewController {
 
-
-    
     @IBOutlet weak var naverMapApiButton: UIButton! /// 나중에 hidden 풀기
     
     @IBOutlet weak var goNaverMapApp: UIButton!
@@ -23,7 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var foodName: UILabel! // 음식 Text
     @IBOutlet weak var mainImage: UIImageView! // 메인 사진
     @IBOutlet weak var imageView: UIImageView! // 음식 변경 버튼
-    @IBOutlet weak var startImage: UIImageView!
+    @IBOutlet weak var startImage: UIImageView! // 시작 Click Image
     @IBOutlet weak var startTextLabel: UILabel!
     @IBOutlet weak var touchImage: UIImageView!
     
@@ -98,9 +96,9 @@ class ViewController: UIViewController {
         
         
     }
-    
 
     // 앱 시작 -> 메인 imageView 터치 ( 첫 음식만 보여주고 사라짐 )
+    var selectedSet = Set<String>() // 중복제거 변수
     @objc func startMenu() -> Int {
         
         mainImage.isHidden = false
@@ -111,8 +109,12 @@ class ViewController: UIViewController {
         startTextLabel.isHidden = true
         touchImage.isHidden = true
         
-        num = Int.random(in: 1...Food.FoodList.count-1)
+        num = Int.random(in: 0...Food.FoodList.count-1)
         foodName.text = Food.FoodList[num]
+      
+        selectedSet.insert(Food.FoodList[num])
+
+        playSound() // tapped -> sound
         
         return num
     }
@@ -120,13 +122,17 @@ class ViewController: UIViewController {
     // 메뉴 변경 버튼
     @objc func changeMenuButton() -> Int {
         
-        // foodName.text = Food.FoodList.randomElement()!
-        
-        num = Int.random(in: 1...Food.FoodList.count-1)
-        foodName.text = Food.FoodList[num]
+        if selectedSet.count == Food.FoodList.count {
+            selectedSet = Set<String>()
+        }
+        repeat{
+            num = Int.random(in: 0...Food.FoodList.count-1)
+            foodName.text = Food.FoodList[num]
+        }while selectedSet.contains(Food.FoodList[num])
+
+        selectedSet.insert(Food.FoodList[num])
         
         playSound() // tapped -> sound
-        
         return num
     }
     
