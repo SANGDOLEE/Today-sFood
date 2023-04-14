@@ -54,9 +54,6 @@
                                     <color key="baseForegroundColor" systemColor="systemRedColor"/>
                                     <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
                                 </buttonConfiguration>
-                                <connections>
-                                    <segue destination="1zp-bJ-C7M" kind="show" id="7Xm-cM-Q1D"/>
-                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="vWU-xW-QDv">
                                 <rect key="frame" x="47" y="546" width="299" height="39.333333333333371"/>
@@ -144,6 +141,9 @@
                     <navigationItem key="navigationItem" id="ot5-eG-4lH">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="gaG-gG-DDa">
                             <color key="tintColor" systemColor="systemYellowColor"/>
+                            <connections>
+                                <segue destination="1zp-bJ-C7M" kind="show" id="280-rq-pet"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -166,30 +166,54 @@
         <!--지도화면-->
         <scene sceneID="aTg-yQ-I3Y">
             <objects>
-                <viewController title="지도화면" id="1zp-bJ-C7M" customClass="MapsViewController" sceneMemberID="viewController">
+                <viewController title="지도화면" id="1zp-bJ-C7M" customClass="AddMenuViewController" customModule="choeatce" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PuB-EA-r9W">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fx0-fF-cfS" customClass="NMFMapView">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gyt-pd-N2A">
+                                <rect key="frame" x="0.0" y="103" width="393" height="65"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="H57-wP-Nod"/>
+                                    <constraint firstAttribute="width" constant="393" id="vvp-ib-LYC"/>
+                                </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" allowsSelection="NO" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gkn-ko-odX">
+                                <rect key="frame" x="0.0" y="168" width="393" height="650"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mycell" id="gGD-AQ-n2V">
+                                        <rect key="frame" x="20" y="55.333332061767578" width="353" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gGD-AQ-n2V" id="SBl-ck-p1f">
+                                            <rect key="frame" x="0.0" y="0.0" width="353" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="srf-CC-V81"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="fx0-fF-cfS" firstAttribute="leading" secondItem="srf-CC-V81" secondAttribute="leading" id="3Pi-IH-A48"/>
-                            <constraint firstItem="srf-CC-V81" firstAttribute="trailing" secondItem="fx0-fF-cfS" secondAttribute="trailing" id="Bvz-sI-Iyo"/>
-                            <constraint firstItem="fx0-fF-cfS" firstAttribute="top" secondItem="srf-CC-V81" secondAttribute="top" id="TBe-8U-DBJ"/>
-                            <constraint firstItem="srf-CC-V81" firstAttribute="bottom" secondItem="fx0-fF-cfS" secondAttribute="bottom" id="hMA-Og-Znl"/>
+                            <constraint firstItem="gyt-pd-N2A" firstAttribute="top" secondItem="srf-CC-V81" secondAttribute="top" id="Fzx-O0-FsE"/>
+                            <constraint firstItem="gkn-ko-odX" firstAttribute="trailing" secondItem="srf-CC-V81" secondAttribute="trailing" id="Lk3-S9-psh"/>
+                            <constraint firstItem="gyt-pd-N2A" firstAttribute="centerX" secondItem="PuB-EA-r9W" secondAttribute="centerX" id="NlY-Y7-T7G"/>
+                            <constraint firstItem="gkn-ko-odX" firstAttribute="leading" secondItem="srf-CC-V81" secondAttribute="leading" id="PJ9-op-D4C"/>
+                            <constraint firstItem="srf-CC-V81" firstAttribute="bottom" secondItem="gkn-ko-odX" secondAttribute="bottom" id="RbX-ab-tMc"/>
+                            <constraint firstItem="gkn-ko-odX" firstAttribute="top" secondItem="gyt-pd-N2A" secondAttribute="bottom" id="SO7-Ev-GtI"/>
+                            <constraint firstItem="gyt-pd-N2A" firstAttribute="trailing" secondItem="srf-CC-V81" secondAttribute="trailing" id="UJc-nn-UeU"/>
+                            <constraint firstItem="gyt-pd-N2A" firstAttribute="leading" secondItem="srf-CC-V81" secondAttribute="leading" id="wmb-wN-ign"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5Kt-ds-wMy"/>
+                    <connections>
+                        <outlet property="tableView" destination="gkn-ko-odX" id="pAh-ad-71b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="05S-io-U47" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1961" y="-35"/>
+            <point key="canvasLocation" x="1959.5419847328244" y="-35.211267605633807"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0PA-tw-6F2">
