@@ -6,15 +6,38 @@
 //
 
 import UIKit
+import CoreData
 
 class AddMenuViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var dataTextField: UITextField!
+    
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.dataSource = self
+        tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
+        tableView.scrollIndicatorInsets = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
+        
+        dataTextField.delegate = self
+        dataTextField.placeholder = "새로운 메뉴를 입력하세요."
+    }
+    
+    
+    // 사용자 메뉴 추가
+    @IBAction func addMenu(_ sender: Any) {
+        guard let text = dataTextField.text, !text.isEmpty else {
+                return
+            }
+            Food.FoodList.append(text)
+            tableView.reloadData()
+            dataTextField.text = nil
+            dataTextField.resignFirstResponder() // 키보드 내려가게
+
+       
     }
     
 
@@ -43,5 +66,12 @@ extension AddMenuViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "My Menu"
     }
+    
+}
+
+
+extension AddMenuViewController: UITextFieldDelegate {
+    
+
     
 }

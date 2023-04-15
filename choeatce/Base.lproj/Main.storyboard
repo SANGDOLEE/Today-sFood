@@ -173,9 +173,32 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gyt-pd-N2A">
                                 <rect key="frame" x="0.0" y="103" width="393" height="65"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GUd-ai-9Dh">
+                                        <rect key="frame" x="20" y="15" width="291" height="35"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gbk-IN-v0g">
+                                        <rect key="frame" x="321" y="15" width="52" height="35"/>
+                                        <fontDescription key="fontDescription" name="ProductSans-Bold" family="Product Sans" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="메뉴추가"/>
+                                        <connections>
+                                            <action selector="addMenu:" destination="1zp-bJ-C7M" eventType="touchUpInside" id="bSd-nx-fmR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="Gbk-IN-v0g" firstAttribute="leading" secondItem="GUd-ai-9Dh" secondAttribute="trailing" constant="10" id="Ag0-6m-ziq"/>
+                                    <constraint firstAttribute="bottom" secondItem="GUd-ai-9Dh" secondAttribute="bottom" constant="15" id="DDk-Gs-xJN"/>
                                     <constraint firstAttribute="height" constant="65" id="H57-wP-Nod"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gbk-IN-v0g" secondAttribute="trailing" constant="20" id="K7S-OI-aO0"/>
+                                    <constraint firstItem="GUd-ai-9Dh" firstAttribute="leading" secondItem="gyt-pd-N2A" secondAttribute="leading" constant="20" id="LQ8-7i-sWQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="Gbk-IN-v0g" secondAttribute="bottom" constant="15" id="g5e-Tx-p3n"/>
+                                    <constraint firstItem="Gbk-IN-v0g" firstAttribute="top" secondItem="gyt-pd-N2A" secondAttribute="top" constant="15" id="mZC-Eu-XQ5"/>
+                                    <constraint firstItem="GUd-ai-9Dh" firstAttribute="top" secondItem="gyt-pd-N2A" secondAttribute="top" constant="15" id="sTb-Ap-thG"/>
                                     <constraint firstAttribute="width" constant="393" id="vvp-ib-LYC"/>
                                 </constraints>
                             </view>
@@ -208,6 +231,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="5Kt-ds-wMy"/>
                     <connections>
+                        <outlet property="dataTextField" destination="GUd-ai-9Dh" id="31P-VR-aah"/>
                         <outlet property="tableView" destination="gkn-ko-odX" id="pAh-ad-71b"/>
                     </connections>
                 </viewController>

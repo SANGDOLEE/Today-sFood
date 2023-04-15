@@ -79,23 +79,10 @@ class ViewController: UIViewController {
     // 카카오 지도로 검색
     @IBAction func goKakao(_ sender: Any) {
         let searchFood = Food.FoodList[num]
-        let result = searchFood.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) // 인코딩된 장소 URL
         
         if let kakaoMapURL = URL(string: "kakaomap://search?q=\(searchFood.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"), UIApplication.shared.canOpenURL(kakaoMapURL) {
             UIApplication.shared.open(kakaoMapURL, options: [:], completionHandler: nil)
         }
-        /*
-        let url_kakao = URL(string:"kakaomap://open?page=placeSearch")! // 장소 URL
-        let appStoreKakaoURL = URL(string: "http://itunes.apple.com/app/id304608425?mt=8")! // 네이버지도 AppStore URL
-        
-        if UIApplication.shared.canOpenURL(url_kakao){
-            UIApplication.shared.open(url_kakao)
-        } else {
-            UIApplication.shared.open(appStoreKakaoURL)
-        }
-         */
-        
-        
     }
 
     // 앱 시작 -> 메인 imageView 터치 ( 첫 음식만 보여주고 사라짐 )
