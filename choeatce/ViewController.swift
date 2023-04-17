@@ -43,6 +43,7 @@ class ViewController: UIViewController {
         NaverMapsButton.isHidden = true
         KaKaoMapsButton.isHidden = true
         imageView.isHidden = true
+        deliveryImage.isHidden = true
         
         // UI, 색상 지정
         self.view.backgroundColor = .systemOrange
@@ -115,6 +116,7 @@ class ViewController: UIViewController {
         NaverMapsButton.isHidden = false
         KaKaoMapsButton.isHidden = false
         imageView.isHidden = false
+        deliveryImage.isHidden = false
         startImage.isHidden = true
         startTextLabel.isHidden = true
         touchImage.isHidden = true
