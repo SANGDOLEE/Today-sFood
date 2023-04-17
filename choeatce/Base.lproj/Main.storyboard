@@ -114,15 +114,23 @@
                                     <constraint firstAttribute="height" constant="35" id="irl-oH-hsg"/>
                                 </constraints>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delivery.png" translatesAutoresizingMaskIntoConstraints="NO" id="cGt-xy-9zx">
+                                <rect key="frame" x="339" y="103" width="44" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="qfw-kj-ZlD"/>
+                                    <constraint firstAttribute="height" constant="40" id="t3o-Q1-FnP"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="JOX-ie-FVF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="76.670000000000002" id="0CN-O4-3JV"/>
                             <constraint firstItem="lBY-Kf-hd4" firstAttribute="top" secondItem="vWU-xW-QDv" secondAttribute="bottom" constant="90" id="0Jy-lc-J3v"/>
                             <constraint firstItem="nKp-IZ-JWO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="45e-Lt-Q4N"/>
                             <constraint firstItem="Ome-2z-ajY" firstAttribute="top" secondItem="nKp-IZ-JWO" secondAttribute="bottom" constant="24" id="4OX-9s-FJw"/>
                             <constraint firstItem="vWU-xW-QDv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="50e-1i-r5B"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cGt-xy-9zx" secondAttribute="trailing" constant="10" id="6eq-b7-EFZ"/>
+                            <constraint firstItem="JOX-ie-FVF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ADV-Th-neK"/>
                             <constraint firstItem="eXz-f2-oR3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BKU-lt-rcz"/>
                             <constraint firstItem="wvt-dB-xjK" firstAttribute="top" secondItem="nKp-IZ-JWO" secondAttribute="bottom" constant="57.670000000000002" id="DR4-77-5H7"/>
                             <constraint firstItem="lBY-Kf-hd4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Dot-WU-eXb"/>
@@ -134,8 +142,8 @@
                             <constraint firstItem="JOX-ie-FVF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="OSM-AW-9GN"/>
                             <constraint firstItem="Ome-2z-ajY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bii-pG-phU"/>
                             <constraint firstItem="wvt-dB-xjK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="25" id="fR4-Df-aFN"/>
+                            <constraint firstItem="cGt-xy-9zx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="iWt-O7-TEO"/>
                             <constraint firstItem="vWU-xW-QDv" firstAttribute="top" secondItem="eXz-f2-oR3" secondAttribute="bottom" constant="10" id="pdS-by-2fr"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JOX-ie-FVF" secondAttribute="trailing" constant="76.329999999999998" id="pe6-4D-pmt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ot5-eG-4lH">
@@ -149,6 +157,7 @@
                     <connections>
                         <outlet property="KaKaoMapsButton" destination="NyR-Fp-YhA" id="fYm-B8-4wJ"/>
                         <outlet property="NaverMapsButton" destination="x55-HO-1Dp" id="H7b-xA-6Qp"/>
+                        <outlet property="deliveryImage" destination="cGt-xy-9zx" id="wUL-5q-Y6E"/>
                         <outlet property="foodName" destination="JOX-ie-FVF" id="pcM-YF-MOX"/>
                         <outlet property="goNaverMapApp" destination="x55-HO-1Dp" id="OWe-hB-WbB"/>
                         <outlet property="imageView" destination="lBY-Kf-hd4" id="0Tm-5m-Q1X"/>
@@ -259,6 +268,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="delivery.png" width="384" height="384"/>
         <image name="main.png" width="384" height="384"/>
         <image name="menu.png" width="409.60000610351562" height="409.60000610351562"/>
         <image name="touch.png" width="384" height="384"/>

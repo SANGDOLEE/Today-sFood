@@ -19,6 +19,7 @@
 		1F3A3F1229E7E6AD00D542FC /* Product Sans Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F3A3F1029E7E6AD00D542FC /* Product Sans Regular.ttf */; };
 		1F3A3F1429E7F22600D542FC /* touch.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F3A3F1329E7F22600D542FC /* touch.png */; };
 		1F8CD06429E42D46007286FB /* main.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F8CD06329E42D46007286FB /* main.png */; };
+		1FC9EB0C29ED285C007B8A5E /* delivery.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FC9EB0B29ED285C007B8A5E /* delivery.png */; };
 		1FD2049329E9381F007E02B2 /* tappedSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD2049229E9381F007E02B2 /* tappedSound.mp3 */; };
 		1FD2049629E971B6007E02B2 /* AddMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD2049529E971B6007E02B2 /* AddMenuViewController.swift */; };
 		6C6C0B8D8C704E4B8B6A842D /* Pods_choeatce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39E058BBE860849A706B6A2A /* Pods_choeatce.framework */; };
@@ -40,6 +41,7 @@
 		1F3A3F1029E7E6AD00D542FC /* Product Sans Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Product Sans Regular.ttf"; sourceTree = "<group>"; };
 		1F3A3F1329E7F22600D542FC /* touch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = touch.png; sourceTree = "<group>"; };
 		1F8CD06329E42D46007286FB /* main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main.png; sourceTree = "<group>"; };
+		1FC9EB0B29ED285C007B8A5E /* delivery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delivery.png; sourceTree = "<group>"; };
 		1FD2049229E9381F007E02B2 /* tappedSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tappedSound.mp3; sourceTree = "<group>"; };
 		1FD2049529E971B6007E02B2 /* AddMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMenuViewController.swift; sourceTree = "<group>"; };
 		39E058BBE860849A706B6A2A /* Pods_choeatce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_choeatce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				1F3A3F1329E7F22600D542FC /* touch.png */,
+				1FC9EB0B29ED285C007B8A5E /* delivery.png */,
 				1F3A3F0A29E6AD8700D542FC /* menu.png */,
 				1F8CD06329E42D46007286FB /* main.png */,
 			);
@@ -204,6 +207,7 @@
 				1F13344A29E418A000095A12 /* Assets.xcassets in Resources */,
 				1F3A3F0B29E6AD8700D542FC /* menu.png in Resources */,
 				1F8CD06429E42D46007286FB /* main.png in Resources */,
+				1FC9EB0C29ED285C007B8A5E /* delivery.png in Resources */,
 				1F3A3F1229E7E6AD00D542FC /* Product Sans Regular.ttf in Resources */,
 				1F13344829E418A000095A12 /* Main.storyboard in Resources */,
 				1F3A3F1129E7E6AD00D542FC /* Product Sans Bold.ttf in Resources */,

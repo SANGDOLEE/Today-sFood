@@ -25,6 +25,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var startTextLabel: UILabel!
     @IBOutlet weak var touchImage: UIImageView!
     
+    @IBOutlet weak var deliveryImage: UIImageView!
+    
+    
     var num = 0 // 음식 List 접근 index 변수
     
     var player: AVAudioPlayer!
@@ -58,8 +61,27 @@ class ViewController: UIViewController {
         startImage.addGestureRecognizer(tapGesture2)
         startImage.isUserInteractionEnabled = true
         
+        let deliveryGesture = UITapGestureRecognizer(target: self, action: #selector(deliveryMenu))
+        deliveryImage.addGestureRecognizer(deliveryGesture)
+        deliveryImage.isUserInteractionEnabled = true
+        
     }
-
+    
+    /// 앱 연동은 모두 URL 스키마를 이용하고 info.plist에 해당 URL스키마 선언 할 것
+    // 배달의 민족 어플 바로가기
+    @objc func deliveryMenu(_ sender: UITapGestureRecognizer) {
+        let urlString = "baemin://openSearch?query=pizza" /// 배달의 민족은 메뉴 검색된 동적화면은 구현이 안된다. ( 아마 기능을 지원하지 않는거 같음 )
+        if let url = URL(string: urlString) {
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url)
+            } else {
+                let appStoreDelivryURL = URL(string: "https://apps.apple.com/kr/app/id378084485")!
+                UIApplication.shared.open(appStoreDelivryURL)
+            }
+        }
+    }
+    
+    
     // 네이버 지도로 검색
     @IBAction func goNaver(_ sender: UIButton) {
         let searchFood = Food.FoodList[num]

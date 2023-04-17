@@ -9,6 +9,7 @@
 	</array>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>baemin</string>
 		<string>kakaomap</string>
 		<string>nmap</string>
 	</array>
