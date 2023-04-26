@@ -13,7 +13,6 @@ class Food {
     static var FoodList = [
         "1","2","3"
     ]
-
 }
 
 

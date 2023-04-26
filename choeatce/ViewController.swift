@@ -11,7 +11,7 @@ import AVFoundation
 import CoreData
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var naverMapApiButton: UIButton! /// 나중에 hidden 풀기
     
     @IBOutlet weak var goNaverMapApp: UIButton!
@@ -26,22 +26,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var startTextLabel: UILabel!
     @IBOutlet weak var touchImage: UIImageView!
     @IBOutlet weak var deliveryImage: UIImageView!
-    
     @IBOutlet weak var addMenuButton: UIBarButtonItem!
     
-    var num = 0 // 음식 List 접근 index 변수
-    
     var player: AVAudioPlayer! // sound 변수
-    
-    var foodList : [String] = []
-   
-    
+    var selectedFood: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-       
         // Hidden 속성
         naverMapApiButton.isHidden = true
         
@@ -60,6 +51,7 @@ class ViewController: UIViewController {
         KaKaoMapsButton.layer.cornerRadius = 10
         
         // imageView2 2개 -> 터치이벤트 적용
+        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(changeMenuButton))
         imageView.addGestureRecognizer(tapGesture)
         imageView.isUserInteractionEnabled = true
@@ -89,40 +81,32 @@ class ViewController: UIViewController {
         }
     }
     
-    
-    // 네이버 지도로 검색
+    // MARK: 지도 검색 ( 네이버, 카카오 )
     @IBAction func goNaver(_ sender: UIButton) {
-        let searchFood = Food.FoodList[num]
-               let result = searchFood.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) // 인코딩된 장소 URL
-               
-               
-               let url_naver = URL(string:"nmap://search?query=\(result!)&appname=com.sangdolee.choeatce")! // 장소 URL
-               let appStoreNaverUrl = URL(string: "http://itunes.apple.com/app/id311867728?mt=8")! // 네이버지도 AppStore URL
-               
-               if UIApplication.shared.canOpenURL(url_naver){
-                   UIApplication.shared.open(url_naver)
-               } else {
-                   UIApplication.shared.open(appStoreNaverUrl)
-               }
+        let searchFood = selectedFood
+        let result = searchFood.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) // 인코딩된 장소 URL
+
+        let url_naver = URL(string:"nmap://search?query=\(result!)&appname=com.sangdolee.choeatce")! // 장소 URL
+        let appStoreNaverUrl = URL(string: "http://itunes.apple.com/app/id311867728?mt=8")! // 네이버지도 AppStore URL
+        
+        if UIApplication.shared.canOpenURL(url_naver){
+            UIApplication.shared.open(url_naver)
+        } else {
+            UIApplication.shared.open(appStoreNaverUrl)
+        }
     }
-    
-    // 카카오 지도로 검색
     @IBAction func goKakao(_ sender: Any) {
-       
-        
-        let searchFood = Food.FoodList[num]
-        
+        let searchFood = selectedFood
         if let kakaoMapURL = URL(string: "kakaomap://search?q=\(searchFood.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"), UIApplication.shared.canOpenURL(kakaoMapURL) {
             UIApplication.shared.open(kakaoMapURL, options: [:], completionHandler: nil)
         }
-         
     }
-
-    // 앱 시작 -> 메인 imageView 터치 ( 첫 음식만 보여주고 사라짐 )
+    
+    // MARK: - 앱 시작 -> 메인 imageView 터치 ( 첫 음식만 보여주고 사라짐 )
     var selectedSet = Set<String>() // 중복제거 변수
     var allFoods = [String]() // 전체 음식 배열
     var currentIndex = -1 // 현재 선택된 음식 인덱스
-    @objc func startMenu() -> Int {
+    @objc func startMenu() -> String {
         
         mainImage.isHidden = false
         NaverMapsButton.isHidden = false
@@ -135,110 +119,107 @@ class ViewController: UIViewController {
         addMenuButton.tintColor = .systemYellow
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-                fatalError("Could not get app delegate")
-            }
-            
-            // NSManagedObjectContext 가져오기
-            let context = appDelegate.persistentContainer.viewContext
-            
-            let request: NSFetchRequest<FoodModel> = FoodModel.fetchRequest()
-            
-            do {
-                let foods = try context.fetch(request)
-                allFoods = foods.map { $0.name! } // 음식 이름을 배열에 저장
-                
-                // Set에 모든 음식이 들어있는 경우, 다시 초기화
-                if selectedSet.count == allFoods.count {
-                    selectedSet.removeAll()
-                }
-                
-                // Set에 있는 음식 제외하고 랜덤으로 음식 이름 뽑기
-                let availableFoods = allFoods.filter { !selectedSet.contains($0) }
-                
-                // availableFoods 배열에 값이 없는 경우, selectedSet을 초기화하고 다시 실행
-                if availableFoods.isEmpty {
-                    selectedSet.removeAll()
-                    return startMenu()
-                }
-                
-                let randomIndex = Int.random(in: 0..<availableFoods.count)
-                let selectedFoodName = availableFoods[randomIndex]
-                
-                // Label에 음식 이름 출력하기
-                foodName.text = selectedFoodName
-                
-                // Set에 선택한 음식 추가
-                selectedSet.insert(selectedFoodName)
-                
-            } catch {
-                print("Error fetching foods: \(error)")
-            }
-            
-           
+            fatalError("Could not get app delegate")
+        }
         
+        // NSManagedObjectContext 가져오기
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let request: NSFetchRequest<FoodModel> = FoodModel.fetchRequest()
+        
+        do {
+            let foods = try context.fetch(request)
+            allFoods = foods.map { $0.name! } // 음식 이름을 배열에 저장
+            
+            // Set에 모든 음식이 들어있는 경우, 다시 초기화
+            if selectedSet.count == allFoods.count {
+                selectedSet.removeAll()
+            }
+            
+            // Set에 있는 음식 제외하고 랜덤으로 음식 이름 뽑기
+            let availableFoods = allFoods.filter { !selectedSet.contains($0) }
+            
+            // availableFoods 배열에 값이 없는 경우, selectedSet을 초기화하고 다시 실행
+            if availableFoods.isEmpty {
+                selectedSet.removeAll()
+                return startMenu()
+            }
+            
+            let randomIndex = Int.random(in: 0..<availableFoods.count)
+            let selectedFoodName = availableFoods[randomIndex]
+            
+            // Label에 음식 이름 출력하기
+            foodName.text = selectedFoodName
+            
+            // Set에 선택한 음식 추가
+            selectedSet.insert(selectedFoodName)
+            selectedFood = selectedFoodName
+            return selectedFood
+            
+        } catch {
+            print("Error fetching foods: \(error)")
+        }
+    
         playSound() // tapped -> sound
-        
-        return num
-         
+        return ""
     }
     
-    // 메뉴 변경 버튼
-    @objc func changeMenuButton() -> Int {
+    // MARK: 메뉴 변경
+    
+    @objc func changeMenuButton() -> String {
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-                fatalError("Could not get app delegate")
+            fatalError("Could not get app delegate")
+        }
+        
+        // NSManagedObjectContext 가져오기
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let request: NSFetchRequest<FoodModel> = FoodModel.fetchRequest()
+        
+        do {
+            let foods = try context.fetch(request)
+            allFoods = foods.map { $0.name! } // 음식 이름을 배열에 저장
+            
+            // Set에 모든 음식이 들어있는 경우, 다시 초기화
+            if selectedSet.count == allFoods.count {
+                selectedSet.removeAll()
             }
             
-            // NSManagedObjectContext 가져오기
-            let context = appDelegate.persistentContainer.viewContext
+            // Set에 있는 음식 제외하고 랜덤으로 음식 이름 뽑기
+            let availableFoods = allFoods.filter { !selectedSet.contains($0) }
             
-            let request: NSFetchRequest<FoodModel> = FoodModel.fetchRequest()
-            
-            do {
-                let foods = try context.fetch(request)
-                allFoods = foods.map { $0.name! } // 음식 이름을 배열에 저장
-                
-                // Set에 모든 음식이 들어있는 경우, 다시 초기화
-                if selectedSet.count == allFoods.count {
-                    selectedSet.removeAll()
-                }
-                
-                // Set에 있는 음식 제외하고 랜덤으로 음식 이름 뽑기
-                let availableFoods = allFoods.filter { !selectedSet.contains($0) }
-                
-                // availableFoods 배열에 값이 없는 경우, selectedSet을 초기화하고 다시 실행
-                if availableFoods.isEmpty {
-                    selectedSet.removeAll()
-                    return startMenu()
-                }
-                
-                let randomIndex = Int.random(in: 0..<availableFoods.count)
-                let selectedFoodName = availableFoods[randomIndex]
-                
-                // Label에 음식 이름 출력하기
-                foodName.text = selectedFoodName
-                
-                // Set에 선택한 음식 추가
-                selectedSet.insert(selectedFoodName)
-                
-            } catch {
-                print("Error fetching foods: \(error)")
+            // availableFoods 배열에 값이 없는 경우, selectedSet을 초기화하고 다시 실행
+            if availableFoods.isEmpty {
+                selectedSet.removeAll()
+                return startMenu()
             }
             
-           
+            let randomIndex = Int.random(in: 0..<availableFoods.count)
+            let selectedFoodName = availableFoods[randomIndex]
+            
+            // Label에 음식 이름 출력하기
+            foodName.text = selectedFoodName
+            
+            // Set에 선택한 음식 추가
+            selectedSet.insert(selectedFoodName)
+            selectedFood = selectedFoodName
+            return selectedFood
+        } catch {
+            print("Error fetching foods: \(error)")
+        }
+        
         playSound() // tapped -> sound
-        return num
+        return ""
     }
     
-    
-    
-    // 메뉴 변경 사운드
+    // MARK: - 사운드 함수
     func playSound() {
         guard let soundURL = Bundle.main.url(forResource: "tappedSound", withExtension: "mp3") else { return }
         var soundID: SystemSoundID = 0
         AudioServicesCreateSystemSoundID(soundURL as CFURL, &soundID)
         AudioServicesPlaySystemSound(soundID)
     }
-  
+    
 }
 
