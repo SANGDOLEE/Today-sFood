@@ -20,6 +20,7 @@
 		1F3A3F1429E7F22600D542FC /* touch.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F3A3F1329E7F22600D542FC /* touch.png */; };
 		1F8CD06429E42D46007286FB /* main.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F8CD06329E42D46007286FB /* main.png */; };
 		1FC9EB0C29ED285C007B8A5E /* delivery.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FC9EB0B29ED285C007B8A5E /* delivery.png */; };
+		1FC9EB2529EEFB23007B8A5E /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1FC9EB2329EEFB23007B8A5E /* DataModel.xcdatamodeld */; };
 		1FD2049329E9381F007E02B2 /* tappedSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD2049229E9381F007E02B2 /* tappedSound.mp3 */; };
 		1FD2049629E971B6007E02B2 /* AddMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD2049529E971B6007E02B2 /* AddMenuViewController.swift */; };
 		6C6C0B8D8C704E4B8B6A842D /* Pods_choeatce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39E058BBE860849A706B6A2A /* Pods_choeatce.framework */; };
@@ -42,6 +43,7 @@
 		1F3A3F1329E7F22600D542FC /* touch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = touch.png; sourceTree = "<group>"; };
 		1F8CD06329E42D46007286FB /* main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main.png; sourceTree = "<group>"; };
 		1FC9EB0B29ED285C007B8A5E /* delivery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delivery.png; sourceTree = "<group>"; };
+		1FC9EB2429EEFB23007B8A5E /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		1FD2049229E9381F007E02B2 /* tappedSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tappedSound.mp3; sourceTree = "<group>"; };
 		1FD2049529E971B6007E02B2 /* AddMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMenuViewController.swift; sourceTree = "<group>"; };
 		39E058BBE860849A706B6A2A /* Pods_choeatce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_choeatce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +91,7 @@
 				1F13344229E418A000095A12 /* SceneDelegate.swift */,
 				1F13344429E418A000095A12 /* ViewController.swift */,
 				1FD2049529E971B6007E02B2 /* AddMenuViewController.swift */,
+				1FC9EB2329EEFB23007B8A5E /* DataModel.xcdatamodeld */,
 				1F13344629E418A000095A12 /* Main.storyboard */,
 				1F13344929E418A000095A12 /* Assets.xcassets */,
 				1F13344B29E418A000095A12 /* LaunchScreen.storyboard */,
@@ -267,6 +270,7 @@
 				1F13344529E418A000095A12 /* ViewController.swift in Sources */,
 				1F3A3F0729E6892B00D542FC /* Food.swift in Sources */,
 				1F13344129E418A000095A12 /* AppDelegate.swift in Sources */,
+				1FC9EB2529EEFB23007B8A5E /* DataModel.xcdatamodeld in Sources */,
 				1F13344329E418A000095A12 /* SceneDelegate.swift in Sources */,
 				1FD2049629E971B6007E02B2 /* AddMenuViewController.swift in Sources */,
 			);
@@ -490,6 +494,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1FC9EB2329EEFB23007B8A5E /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1FC9EB2429EEFB23007B8A5E /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 1FC9EB2429EEFB23007B8A5E /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1F13343529E418A000095A12 /* Project object */;
 }
