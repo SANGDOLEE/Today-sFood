@@ -241,7 +241,9 @@
                             <constraint firstItem="gyt-pd-N2A" firstAttribute="leading" secondItem="srf-CC-V81" secondAttribute="leading" id="wmb-wN-ign"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="5Kt-ds-wMy"/>
+                    <navigationItem key="navigationItem" id="5Kt-ds-wMy">
+                        <barButtonItem key="rightBarButtonItem" id="D09-a6-1zo"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="dataTextField" destination="GUd-ai-9Dh" id="31P-VR-aah"/>
                         <outlet property="tableView" destination="gkn-ko-odX" id="pAh-ad-71b"/>

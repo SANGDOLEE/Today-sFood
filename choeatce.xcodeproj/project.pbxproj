@@ -18,7 +18,6 @@
 		1F3A3F1229E7E6AD00D542FC /* Product Sans Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F3A3F1029E7E6AD00D542FC /* Product Sans Regular.ttf */; };
 		1F3A3F1429E7F22600D542FC /* touch.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F3A3F1329E7F22600D542FC /* touch.png */; };
 		1F8CD06429E42D46007286FB /* main.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F8CD06329E42D46007286FB /* main.png */; };
-		1FC90C5629FA65A400EE4E9F /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC90C5529FA65A400EE4E9F /* Food.swift */; };
 		1FC9EB0C29ED285C007B8A5E /* delivery.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FC9EB0B29ED285C007B8A5E /* delivery.png */; };
 		1FC9EB2529EEFB23007B8A5E /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1FC9EB2329EEFB23007B8A5E /* DataModel.xcdatamodeld */; };
 		1FD2049329E9381F007E02B2 /* tappedSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD2049229E9381F007E02B2 /* tappedSound.mp3 */; };
@@ -41,7 +40,6 @@
 		1F3A3F1029E7E6AD00D542FC /* Product Sans Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Product Sans Regular.ttf"; sourceTree = "<group>"; };
 		1F3A3F1329E7F22600D542FC /* touch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = touch.png; sourceTree = "<group>"; };
 		1F8CD06329E42D46007286FB /* main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main.png; sourceTree = "<group>"; };
-		1FC90C5529FA65A400EE4E9F /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		1FC9EB0B29ED285C007B8A5E /* delivery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delivery.png; sourceTree = "<group>"; };
 		1FC9EB2429EEFB23007B8A5E /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		1FD2049229E9381F007E02B2 /* tappedSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tappedSound.mp3; sourceTree = "<group>"; };
@@ -86,7 +84,6 @@
 				1FD2049129E9380C007E02B2 /* Sound */,
 				1F3A3F0E29E7E67500D542FC /* Font */,
 				1F13345429E41DC900095A12 /* ImageFile */,
-				1FC90C5529FA65A400EE4E9F /* Food.swift */,
 				1F13344029E418A000095A12 /* AppDelegate.swift */,
 				1F13344229E418A000095A12 /* SceneDelegate.swift */,
 				1F13344429E418A000095A12 /* ViewController.swift */,
@@ -272,7 +269,6 @@
 				1FC9EB2529EEFB23007B8A5E /* DataModel.xcdatamodeld in Sources */,
 				1F13344329E418A000095A12 /* SceneDelegate.swift in Sources */,
 				1FD2049629E971B6007E02B2 /* AddMenuViewController.swift in Sources */,
-				1FC90C5629FA65A400EE4E9F /* Food.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -82,15 +82,15 @@ extension AddMenuViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // CoreData에서 데이터를 가져와서 셀의 개수를 반환
-            guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return 0 }
-            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "FoodModel")
-            do {
-                let count = try context.count(for: fetchRequest)
-                return count
-            } catch {
-                print("Error fetching food count from CoreData: \(error)")
-                return 0
-            }
+        guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return 0 }
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "FoodModel")
+        do {
+            let count = try context.count(for: fetchRequest)
+            return count
+        } catch {
+            print("Error fetching food count from CoreData: \(error)")
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -136,7 +136,7 @@ extension AddMenuViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-    
+    /*
     func removeFoodFromList(_ food: String) {
         // 사용자가 추가한 메뉴인 경우 CoreData에서 삭제
         if !Food.FoodList.contains(food) {
@@ -154,16 +154,17 @@ extension AddMenuViewController: UITableViewDataSource, UITableViewDelegate {
             }
         }
     }
-
+    */
     // 사용자 메뉴 삭제
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let deletedFood = foodList[indexPath.row]
-
+                   
+                   // delete from CoreData
                    guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return }
                    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "FoodModel")
                    fetchRequest.predicate = NSPredicate(format: "name = %@", deletedFood)
-
+                   
                    do {
                        let result = try context.fetch(fetchRequest)
                        let food = result[0] as! NSManagedObject
@@ -172,13 +173,16 @@ extension AddMenuViewController: UITableViewDataSource, UITableViewDelegate {
                    } catch {
                        print("Error deleting food from CoreData: \(error)")
                    }
-
+                   
+                   // delete from foodList array
+                   foodList.remove(at: indexPath.row)
+                   
                    tableView.deleteRows(at: [indexPath], with: .fade)
-
+                   
                    let fetchAllRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "FoodModel")
                    do {
                        let result = try context.fetch(fetchAllRequest)
-                       if result.count == 1 {
+                       if result.count == 0 {
                            tableView.setEditing(false, animated: true)
                        }
                    } catch {
