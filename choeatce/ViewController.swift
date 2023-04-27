@@ -107,7 +107,7 @@ class ViewController: UIViewController {
     var allFoods = [String]() // 전체 음식 배열
     var currentIndex = -1 // 현재 선택된 음식 인덱스
     @objc func startMenu() -> String {
-        
+        playSound() // tapped -> sound
         mainImage.isHidden = false
         NaverMapsButton.isHidden = false
         KaKaoMapsButton.isHidden = false
@@ -159,15 +159,12 @@ class ViewController: UIViewController {
         } catch {
             print("Error fetching foods: \(error)")
         }
-    
-        playSound() // tapped -> sound
         return ""
     }
     
     // MARK: 메뉴 변경
-    
     @objc func changeMenuButton() -> String {
-        
+        playSound() // tapped -> sound
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             fatalError("Could not get app delegate")
         }
@@ -208,8 +205,6 @@ class ViewController: UIViewController {
         } catch {
             print("Error fetching foods: \(error)")
         }
-        
-        playSound() // tapped -> sound
         return ""
     }
     

@@ -43,42 +43,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        /*
-         // 이전에 저장된 데이터를 로드하는 코드
-         let context = persistentContainer.viewContext
-         let request = NSFetchRequest<FoodModel>(entityName: "FoodModel")
-         do {
-         // CoreData에서 저장된 EntityName의 데이터를 불러옴
-         let result = try context.fetch(request)
-         for data in result {
-         // 불러온 데이터를 사용
-         print(data.value(forKey: "name"))
-         }
-         } catch {
-         print("Failed")
-         }
-         */
-        
         let context = persistentContainer.viewContext
-        
-        // 기본 음식 데이터 생성
-        let foodNames = ["치킨", "피자", "햄버거"]
-        
-        // CoreData에 기본 음식 데이터 저장
-        for foodName in foodNames {
-            let food = FoodModel(context: context)
-            food.name = foodName
-        }
-        
-        // CoreData에 저장
-        do {
-            try context.save()
-        } catch {
-            print("Failed to save default food data: \(error)")
-        }
-        
-        Thread.sleep(forTimeInterval: 2.0)
-        return true
+            
+            // CoreData에 기본 음식 데이터가 있는지 확인
+            let request: NSFetchRequest<FoodModel> = FoodModel.fetchRequest()
+            do {
+                let count = try context.count(for: request)
+                // 기본 음식 데이터가 없으면 추가
+                if count == 0 {
+                    let foodNames = ["치킨", "피자", "햄버거"]
+                    
+                    // CoreData에 기본 음식 데이터 저장
+                    for foodName in foodNames {
+                        let food = FoodModel(context: context)
+                        food.name = foodName
+                    }
+                    
+                    // CoreData에 저장
+                    do {
+                        try context.save()
+                    } catch {
+                        print("Failed to save default food data: \(error)")
+                    }
+                }
+            } catch {
+                print("Failed to check default food data: \(error)")
+            }
+            
+            Thread.sleep(forTimeInterval: 2.0)
+            return true
     }
     
     // MARK: UISceneSession Lifecycle
