@@ -165,47 +165,56 @@ class ViewController: UIViewController {
     // MARK: 메뉴 변경
     @objc func changeMenuButton() -> String {
         playSound() // tapped -> sound
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            fatalError("Could not get app delegate")
-        }
-        
-        // NSManagedObjectContext 가져오기
-        let context = appDelegate.persistentContainer.viewContext
-        
-        let request: NSFetchRequest<FoodModel> = FoodModel.fetchRequest()
-        
-        do {
-            let foods = try context.fetch(request)
-            allFoods = foods.map { $0.name! } // 음식 이름을 배열에 저장
-            
-            // Set에 모든 음식이 들어있는 경우, 다시 초기화
-            if selectedSet.count == allFoods.count {
-                selectedSet.removeAll()
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                fatalError("Could not get app delegate")
             }
             
-            // Set에 있는 음식 제외하고 랜덤으로 음식 이름 뽑기
-            let availableFoods = allFoods.filter { !selectedSet.contains($0) }
+            // NSManagedObjectContext 가져오기
+            let context = appDelegate.persistentContainer.viewContext
             
-            // availableFoods 배열에 값이 없는 경우, selectedSet을 초기화하고 다시 실행
-            if availableFoods.isEmpty {
-                selectedSet.removeAll()
-                return startMenu()
+            let request: NSFetchRequest<FoodModel> = FoodModel.fetchRequest()
+            
+            do {
+                let foods = try context.fetch(request)
+                
+                // Fetch된 데이터가 1개 이상인 경우에만 함수 실행
+                guard foods.count > 0
+                else {
+                    foodName.text = "Empty Menu"
+                    foodName.textColor = .red
+                    return ""
+                }
+                foodName.textColor = .black
+                allFoods = foods.map { $0.name! } // 음식 이름을 배열에 저장
+                
+                // Set에 모든 음식이 들어있는 경우, 다시 초기화
+                if selectedSet.count == allFoods.count {
+                    selectedSet.removeAll()
+                }
+                
+                // Set에 있는 음식 제외하고 랜덤으로 음식 이름 뽑기
+                let availableFoods = allFoods.filter { !selectedSet.contains($0) }
+                
+                // availableFoods 배열에 값이 없는 경우, selectedSet을 초기화하고 다시 실행
+                if availableFoods.isEmpty {
+                    selectedSet.removeAll()
+                    return startMenu()
+                }
+                
+                let randomIndex = Int.random(in: 0..<availableFoods.count)
+                let selectedFoodName = availableFoods[randomIndex]
+                
+                // Label에 음식 이름 출력하기
+                foodName.text = selectedFoodName
+                
+                // Set에 선택한 음식 추가
+                selectedSet.insert(selectedFoodName)
+                selectedFood = selectedFoodName
+                return selectedFood
+            } catch {
+                print("Error fetching foods: \(error)")
             }
-            
-            let randomIndex = Int.random(in: 0..<availableFoods.count)
-            let selectedFoodName = availableFoods[randomIndex]
-            
-            // Label에 음식 이름 출력하기
-            foodName.text = selectedFoodName
-            
-            // Set에 선택한 음식 추가
-            selectedSet.insert(selectedFoodName)
-            selectedFood = selectedFoodName
-            return selectedFood
-        } catch {
-            print("Error fetching foods: \(error)")
-        }
-        return ""
+            return ""
     }
     
     // MARK: - 사운드 함수

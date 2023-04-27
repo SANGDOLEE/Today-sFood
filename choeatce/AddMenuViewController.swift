@@ -154,40 +154,36 @@ extension AddMenuViewController: UITableViewDataSource, UITableViewDelegate {
             }
         }
     }
-    
-    
-    
+
     // 사용자 메뉴 삭제
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let deletedFood = foodList[indexPath.row]
-            
-            // CoreData에서 해당 데이터 삭제
-            guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return }
-            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "FoodModel")
-            fetchRequest.predicate = NSPredicate(format: "name = %@", deletedFood)
-            
-            do {
-                let result = try context.fetch(fetchRequest)
-                let food = result[0] as! NSManagedObject
-                context.delete(food)
-                try context.save()
-            } catch {
-                print("Error deleting food from CoreData: \(error)")
-            }
-            
-            // 배열에서 해당 데이터 삭제
-            if let index = foodList.firstIndex(of: deletedFood) {
-                foodList.remove(at: index)
-            }
-            
-            // 테이블뷰에서 해당 row 삭제
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            
-            // 배열에서 데이터를 삭제한 이후에 남은 데이터가 1개인 경우 편집 모드를 종료합니다.
-            if foodList.count == 1 {
-                tableView.setEditing(false, animated: true)
-            }
+
+                   guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return }
+                   let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "FoodModel")
+                   fetchRequest.predicate = NSPredicate(format: "name = %@", deletedFood)
+
+                   do {
+                       let result = try context.fetch(fetchRequest)
+                       let food = result[0] as! NSManagedObject
+                       context.delete(food)
+                       try context.save()
+                   } catch {
+                       print("Error deleting food from CoreData: \(error)")
+                   }
+
+                   tableView.deleteRows(at: [indexPath], with: .fade)
+
+                   let fetchAllRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "FoodModel")
+                   do {
+                       let result = try context.fetch(fetchAllRequest)
+                       if result.count == 1 {
+                           tableView.setEditing(false, animated: true)
+                       }
+                   } catch {
+                       print("Error fetching data from CoreData: \(error)")
+                   }
         }
     }
     
