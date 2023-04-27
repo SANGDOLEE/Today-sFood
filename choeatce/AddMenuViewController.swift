@@ -197,5 +197,12 @@ extension AddMenuViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension AddMenuViewController: UITextFieldDelegate {
-    
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        // 최대 18자까지만 입력가능
+        let maxLength = 20
+        guard let currentText = textField.text else { return true}
+        let updateText = (currentText as NSString).replacingCharacters(in: range, with: string)
+        return updateText.count <= maxLength
+    }
 }
