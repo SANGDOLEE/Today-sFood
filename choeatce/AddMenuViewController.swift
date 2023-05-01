@@ -15,7 +15,7 @@ class AddMenuViewController: UIViewController {
     @IBOutlet weak var dataTextField: UITextField!
     
     var foodList: [String] = []
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,16 +23,37 @@ class AddMenuViewController: UIViewController {
         tableView.delegate = self
         tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         tableView.scrollIndicatorInsets = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
-        
-        dataTextField.delegate = self
-        dataTextField.placeholder = "새로운 메뉴를 입력하세요."
-        
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "mycell")
         
-        //foodList = Food.FoodList
+        //
+        dataTextField.delegate = self
+        dataTextField.backgroundColor = UIColor.white
+    
+        let placeholderColor = UIColor(red: 174/255, green: 174/255, blue: 178/255, alpha: 1.0) // 기본 텍스트 필드 placeholder 색상
+        let darkPlaceholderColor = UIColor(red: 127/255, green: 127/255, blue: 129/255, alpha: 1.0) // 다크 모드 placeholder 색상
+        if traitCollection.userInterfaceStyle == .dark {
+            dataTextField.attributedPlaceholder = NSAttributedString(string: "새로운 메뉴를 입력하세요.", attributes: [NSAttributedString.Key.foregroundColor: darkPlaceholderColor])
+        } else {
+            dataTextField.attributedPlaceholder = NSAttributedString(string: "새로운 메뉴를 입력하세요.", attributes: [NSAttributedString.Key.foregroundColor: placeholderColor])
+        }
         
-        print(tableView)
+        dataTextField.layer.borderColor = UIColor.placeholderText.cgColor
+        dataTextField.layer.borderWidth = 1.0
+        dataTextField.layer.cornerRadius = 5.0
+        
+        // 테이블뷰 색상지정 : UITableViewCell과 UILabel에 대한 색상을 생성합니다.
+        tableView.backgroundColor = UIColor { traitCollection -> UIColor in
+            if traitCollection.userInterfaceStyle == .dark {
+                // 다크 모드일 때 적용할 색상
+                return UIColor.lightGray
+            } else {
+                // 라이트 모드일 때 적용할 색상
+                return UIColor.systemGray6
+            }
+        }
+      
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchFoodList() // CoreData에서 데이터를 가져와서 foodList를 업데이트합니다.
@@ -105,6 +126,8 @@ extension AddMenuViewController: UITableViewDataSource, UITableViewDelegate {
             cell.textLabel?.font = UIFont.systemFont(ofSize: 14)
         }
         
+        cell.backgroundColor = UIColor.white
+        cell.textLabel?.textColor = UIColor.black
         cell.textLabel?.text = food
         return cell
     }
@@ -200,7 +223,7 @@ extension AddMenuViewController: UITextFieldDelegate {
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         // 최대 18자까지만 입력가능
-        let maxLength = 20
+        let maxLength = 6
         guard let currentText = textField.text else { return true}
         let updateText = (currentText as NSString).replacingCharacters(in: range, with: string)
         return updateText.count <= maxLength

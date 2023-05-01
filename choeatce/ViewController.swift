@@ -30,6 +30,7 @@ class ViewController: UIViewController {
     
     var player: AVAudioPlayer! // sound 변수
     var selectedFood: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
