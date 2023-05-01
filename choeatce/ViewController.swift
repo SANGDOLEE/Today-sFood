@@ -46,6 +46,8 @@ class ViewController: UIViewController {
         self.view.backgroundColor = .systemOrange
         NaverMapsButton.backgroundColor = .systemYellow
         KaKaoMapsButton.backgroundColor = .systemYellow
+        startTextLabel.textColor = .black
+        foodName.textColor = .black
         
         NaverMapsButton.layer.cornerRadius = 10
         KaKaoMapsButton.layer.cornerRadius = 10
