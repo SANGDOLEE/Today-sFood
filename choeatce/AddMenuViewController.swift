@@ -25,7 +25,6 @@ class AddMenuViewController: UIViewController {
         tableView.scrollIndicatorInsets = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "mycell")
         
-        //
         dataTextField.delegate = self
         dataTextField.backgroundColor = UIColor.white
     
@@ -159,25 +158,6 @@ extension AddMenuViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-    /*
-    func removeFoodFromList(_ food: String) {
-        // 사용자가 추가한 메뉴인 경우 CoreData에서 삭제
-        if !Food.FoodList.contains(food) {
-            guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return }
-            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "FoodModel")
-            fetchRequest.predicate = NSPredicate(format: "name = %@", food)
-            
-            do {
-                let result = try context.fetch(fetchRequest)
-                let food = result[0] as! NSManagedObject
-                context.delete(food)
-                try context.save()
-            } catch {
-                print("Error deleting food from CoreData: \(error)")
-            }
-        }
-    }
-    */
     // 사용자 메뉴 삭제
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
