@@ -101,7 +101,10 @@ class ViewController: UIViewController {
     @IBAction func goKakao(_ sender: Any) {
         let searchFood = selectedFood
         if let kakaoMapURL = URL(string: "kakaomap://search?q=\(searchFood.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"), UIApplication.shared.canOpenURL(kakaoMapURL) {
-            UIApplication.shared.open(kakaoMapURL, options: [:], completionHandler: nil)
+                UIApplication.shared.open(kakaoMapURL, options: [:], completionHandler: nil)
+            } else {
+                let appStoreURL = URL(string: "itms-apps://itunes.apple.com/app/id304608425") // 카카오 지도 앱스토어 링크
+                UIApplication.shared.open(appStoreURL!, options: [:], completionHandler: nil)
         }
     }
     

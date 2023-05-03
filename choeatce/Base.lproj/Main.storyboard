@@ -149,7 +149,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ot5-eG-4lH">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="gaG-gG-DDa">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="gaG-gG-DDa">
                             <color key="tintColor" systemColor="systemOrangeColor"/>
                             <connections>
                                 <segue destination="1zp-bJ-C7M" kind="show" id="280-rq-pet"/>
