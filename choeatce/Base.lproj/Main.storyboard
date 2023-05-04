@@ -21,7 +21,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController title="메인화면" id="BYZ-38-t0r" customClass="ViewController" customModule="choeatce" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -42,8 +42,8 @@
                                     <constraint firstAttribute="height" constant="303" id="jka-iM-EGQ"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYR-6a-1R2">
-                                <rect key="frame" x="130" y="768" width="133" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYR-6a-1R2">
+                                <rect key="frame" x="130" y="-84" width="133" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Fim-Dd-qlq"/>
                                     <constraint firstAttribute="width" constant="133" id="qLO-Un-KhY"/>
@@ -121,11 +121,27 @@
                                     <constraint firstAttribute="height" constant="40" id="t3o-Q1-FnP"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pzz-7p-UVB">
+                                <rect key="frame" x="47" y="595.33333333333337" width="299" height="39.333333333333371"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39.329999999999998" id="WJL-ZX-PgX"/>
+                                    <constraint firstAttribute="width" constant="299" id="pEN-BS-fAz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ProductSans-Regular" family="Product Sans" pointSize="18"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Apple maps">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="goApple:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XPD-jN-wGK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="lBY-Kf-hd4" firstAttribute="top" secondItem="vWU-xW-QDv" secondAttribute="bottom" constant="90" id="0Jy-lc-J3v"/>
+                            <constraint firstItem="Pzz-7p-UVB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0dg-go-9wv"/>
                             <constraint firstItem="nKp-IZ-JWO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="45e-Lt-Q4N"/>
                             <constraint firstItem="Ome-2z-ajY" firstAttribute="top" secondItem="nKp-IZ-JWO" secondAttribute="bottom" constant="24" id="4OX-9s-FJw"/>
                             <constraint firstItem="vWU-xW-QDv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="50e-1i-r5B"/>
@@ -146,6 +162,7 @@
                             <constraint firstItem="cGt-xy-9zx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="iWt-O7-TEO"/>
                             <constraint firstItem="nKp-IZ-JWO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="iZQ-tr-Ph1"/>
                             <constraint firstItem="vWU-xW-QDv" firstAttribute="top" secondItem="eXz-f2-oR3" secondAttribute="bottom" constant="10" id="pdS-by-2fr"/>
+                            <constraint firstItem="Pzz-7p-UVB" firstAttribute="top" secondItem="vWU-xW-QDv" secondAttribute="bottom" constant="10" id="ySH-C3-NUG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ot5-eG-4lH">
@@ -157,6 +174,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="AppleMapsButton" destination="Pzz-7p-UVB" id="9Hl-TZ-ChP"/>
                         <outlet property="KaKaoMapsButton" destination="NyR-Fp-YhA" id="fYm-B8-4wJ"/>
                         <outlet property="NaverMapsButton" destination="x55-HO-1Dp" id="H7b-xA-6Qp"/>
                         <outlet property="addMenuButton" destination="gaG-gG-DDa" id="lek-sm-l5X"/>

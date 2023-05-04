@@ -7,17 +7,20 @@
 
 import UIKit
 import NMapsMap
+import CoreLocation
 import AVFoundation
 import CoreData
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var naverMapApiButton: UIButton! /// 나중에 hidden 풀기
     
-    @IBOutlet weak var goNaverMapApp: UIButton!
+    @IBOutlet weak var goNaverMapApp: UIButton! /// 사용안함
     
     @IBOutlet weak var NaverMapsButton: UIButton!
     @IBOutlet weak var KaKaoMapsButton: UIButton!
+    @IBOutlet weak var AppleMapsButton: UIButton!
+    
     
     @IBOutlet weak var foodName: UILabel! // 음식 Text
     @IBOutlet weak var mainImage: UIImageView! // 메인 사진
@@ -31,6 +34,8 @@ class ViewController: UIViewController {
     var player: AVAudioPlayer! // sound 변수
     var selectedFood: String = ""
     
+    var locationManager: CLLocationManager? // 애플 maps
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,6 +45,7 @@ class ViewController: UIViewController {
         mainImage.isHidden = true
         NaverMapsButton.isHidden = true
         KaKaoMapsButton.isHidden = true
+        AppleMapsButton.isHidden = true
         imageView.isHidden = true
         deliveryImage.isHidden = true
         
@@ -47,11 +53,18 @@ class ViewController: UIViewController {
         self.view.backgroundColor = .systemOrange
         NaverMapsButton.backgroundColor = .systemYellow
         KaKaoMapsButton.backgroundColor = .systemYellow
+        AppleMapsButton.backgroundColor = .systemYellow
         startTextLabel.textColor = .black
         foodName.textColor = .black
         
         NaverMapsButton.layer.cornerRadius = 10
         KaKaoMapsButton.layer.cornerRadius = 10
+        AppleMapsButton.layer.cornerRadius = 10
+        
+        locationManager = CLLocationManager()
+        locationManager?.delegate = self
+        locationManager?.requestWhenInUseAuthorization()
+        locationManager?.startUpdatingLocation()
         
         // imageView2 2개 -> 터치이벤트 적용
         
@@ -108,6 +121,26 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func goApple(_ sender: Any) {
+        if let currentLocation = locationManager?.location {
+               let currentLatitude = currentLocation.coordinate.latitude
+               let currentLongitude = currentLocation.coordinate.longitude
+               let searchFood = selectedFood
+               let result = searchFood.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+               let urlString = "http://maps.apple.com/?q=\(result)&sll=\(currentLatitude),\(currentLongitude)&near=Current%20Location"
+               let url_appleMaps = URL(string: urlString)!
+
+               if UIApplication.shared.canOpenURL(url_appleMaps) {
+                   UIApplication.shared.open(url_appleMaps)
+               } else {
+                   let appStoreLink = "https://apps.apple.com/us/app/apple-maps/id915056765"
+                   if let url = URL(string: appStoreLink) {
+                       UIApplication.shared.open(url)
+                   }
+               }
+           }
+    }
+    
     // MARK: - 앱 시작 -> 메인 imageView 터치 ( 첫 음식만 보여주고 사라짐 )
     var selectedSet = Set<String>() // 중복제거 변수
     var allFoods = [String]() // 전체 음식 배열
@@ -117,6 +150,7 @@ class ViewController: UIViewController {
         mainImage.isHidden = false
         NaverMapsButton.isHidden = false
         KaKaoMapsButton.isHidden = false
+        AppleMapsButton.isHidden = false
         imageView.isHidden = false
         deliveryImage.isHidden = false
         startImage.isHidden = true
