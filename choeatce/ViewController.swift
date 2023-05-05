@@ -48,12 +48,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         AppleMapsButton.isHidden = true
         imageView.isHidden = true
         deliveryImage.isHidden = true
+        addMenuButton.tintColor = .systemGreen
         
         // UI, 색상 지정
-        self.view.backgroundColor = .systemOrange
-        NaverMapsButton.backgroundColor = .systemYellow
-        KaKaoMapsButton.backgroundColor = .systemYellow
-        AppleMapsButton.backgroundColor = .systemYellow
+        self.view.backgroundColor = .systemGreen
+        NaverMapsButton.backgroundColor = .yellow
+        KaKaoMapsButton.backgroundColor = .yellow
+        AppleMapsButton.backgroundColor = .yellow
         startTextLabel.textColor = .black
         foodName.textColor = .black
         
@@ -156,7 +157,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         startImage.isHidden = true
         startTextLabel.isHidden = true
         touchImage.isHidden = true
-        addMenuButton.tintColor = .systemYellow
+        addMenuButton.tintColor = .yellow
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             fatalError("Could not get app delegate")

@@ -43,7 +43,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYR-6a-1R2">
-                                <rect key="frame" x="130" y="-84" width="133" height="40"/>
+                                <rect key="frame" x="130" y="768" width="133" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Fim-Dd-qlq"/>
                                     <constraint firstAttribute="width" constant="133" id="qLO-Un-KhY"/>
@@ -167,7 +167,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ot5-eG-4lH">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="gaG-gG-DDa">
-                            <color key="tintColor" systemColor="systemOrangeColor"/>
+                            <color key="tintColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="1zp-bJ-C7M" kind="show" id="280-rq-pet"/>
                             </connections>
@@ -303,9 +303,6 @@
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -16,11 +16,11 @@
 	<key>NMFClientId</key>
 	<string>i523ca1e9t</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>위치정보 권한이 필요합니다.</string>
+	<string>지도에서 내 위치를 확인하여 길찾기, 내비게이션 기능을 이용하기 위해 권한이 필요합니다. 설정에서 이를 변경할 수 있습니다.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>위치정보 권한이 필요합니다.</string>
+	<string>지도에서 내 위치를 확인하여 길찾기, 내비게이션 기능을 이용하기 위해 권한이 필요합니다. 설정에서 이를 변경할 수 있습니다.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>위치정보 권한이 필요합니다.</string>
+	<string>지도에서 내 위치를 확인하여 길찾기, 내비게이션 기능을 이용하기 위해 권한이 필요합니다. 설정에서 이를 변경할 수 있습니다.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
