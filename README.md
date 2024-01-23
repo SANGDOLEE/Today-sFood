@@ -50,7 +50,7 @@
       <td colspan="1" align="center"><b> 시작 화면 </b></td>
     </tr>
     <tr>
-      <td align="center"><a href=""><img src="https://github.com/SANGDOLEE/MiniProject_BrainBuddy/assets/108053426/860519d8-f613-4076-9282-d9f8f67401cd" width="400px;" alt=""/><br /><sub><b></b></sub></a></td>
+      <td align="center"><a href=""><img src="https://github.com/SANGDOLEE/TodaysFood/assets/108053426/13fb3384-8f9d-4f84-81d0-bd274e9bb54a" width="400px;" alt=""/><br /><sub><b></b></sub></a></td>
     </tr>
 </table>
 <!-- 두번째 테이블 -->
@@ -62,9 +62,9 @@
       <td colspan="1" align="center"><b>메인 화면 3</b></td>
     </tr>
     <tr>
-      <td align="center"><a href=""><img src="https://github.com/SANGDOLEE/MiniProject_BrainBuddy/assets/108053426/9dde47bb-53b5-4acc-bad9-35bb3f62f63d" width="400px;" alt=""/><br /><sub><b></b></sub></a></td>
-      <td align="center"><a href=""><img src="https://github.com/SANGDOLEE/MiniProject_BrainBuddy/assets/108053426/9dde47bb-53b5-4acc-bad9-35bb3f62f63d" width="400px;" alt=""/><br /><sub><b></b></sub></a></td>
-      <td align="center"><a href=""><img src="https://github.com/SANGDOLEE/MiniProject_BrainBuddy/assets/108053426/9dde47bb-53b5-4acc-bad9-35bb3f62f63d" width="400px;" alt=""/><br /><sub><b></b></sub></a></td>
+      <td align="center"><a href=""><img src="https://github.com/SANGDOLEE/TodaysFood/assets/108053426/52b7f221-76b6-49c5-ba6f-d33a0cb331bf" width="400px;" alt=""/><br /><sub><b></b></sub></a></td>
+      <td align="center"><a href=""><img src="https://github.com/SANGDOLEE/TodaysFood/assets/108053426/bd4e9576-578c-409d-a42e-2c61cb001f80" width="400px;" alt=""/><br /><sub><b></b></sub></a></td>
+      <td align="center"><a href=""><img src="https://github.com/SANGDOLEE/TodaysFood/assets/108053426/17a82582-4ce2-45be-a7b3-e7091b770962d" width="400px;" alt=""/><br /><sub><b></b></sub></a></td>
     </tr>
   </tbody>
 </table>
@@ -75,7 +75,7 @@
       <td colspan="1" align="center"><b> 나의 메뉴판 화면 </b></td>
     </tr>
     <tr>
-      <td align="center"><a href=""><img src="https://github.com/SANGDOLEE/MiniProject_BrainBuddy/assets/108053426/8e985fe3-8bf7-42b2-a3e0-220a996202f5" width="400px;" alt=""/><br /><sub><b></b></sub></a></td>
+      <td align="center"><a href=""><img src="https://github.com/SANGDOLEE/TodaysFood/assets/108053426/91719991-c1b2-466a-9d01-e2c7205941e6" width="400px;" alt=""/><br /><sub><b></b></sub></a></td>
     </tr>
    </tbody>
 </table>
