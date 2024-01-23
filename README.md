@@ -1,5 +1,5 @@
 <h1> 오늘의 음식</h1>
-<img src="https://github.com/SANGDOLEE/MiniProject_RPEChart/assets/108053426/dc9c7891-b294-46c0-b511-5c3228157e69" width="200px;" alt=""/>
+<img src="https://github.com/SANGDOLEE/TodaysFood/assets/108053426/f87759fb-59a3-454c-95b3-7c80afabff31" width="200px;" alt=""/>
 <br/>
 
 
