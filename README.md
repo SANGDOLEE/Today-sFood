@@ -13,7 +13,7 @@
 
 <h2> 배포 주소 </h2>
 <p> 앱스토어 : https://apps.apple.com/kr/app/%EC%98%A4%EB%8A%98%EC%9D%98-%EC%9D%8C%EC%8B%9D/id6448716843 </p>
-<p> 시연영상 : https://youtu.be/Bb18xZAaaeY](https://youtu.be/ok_LfLREdWk </p>
+<p> 시연영상 : https://youtu.be/ok_LfLREdWk](https://youtu.be/ok_LfLREdWk </p>
 
 <br/>
 
