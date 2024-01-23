@@ -50,7 +50,7 @@
       <td colspan="1" align="center"><b> 시작 화면 </b></td>
     </tr>
     <tr>
-      <td align="center"><a href=""><img src="https://github.com/SANGDOLEE/TodaysFood/assets/108053426/13fb3384-8f9d-4f84-81d0-bd274e9bb54a" width="400px;" alt=""/><br /><sub><b></b></sub></a></td>
+      <td align="center"><a href=""><img src="https://github.com/SANGDOLEE/TodaysFood/assets/108053426/13fb3384-8f9d-4f84-81d0-bd274e9bb54a" width="310px;" alt=""/><br /><sub><b></b></sub></a></td>
     </tr>
 </table>
 <!-- 두번째 테이블 -->
@@ -75,7 +75,7 @@
       <td colspan="1" align="center"><b> 나의 메뉴판 화면 </b></td>
     </tr>
     <tr>
-      <td align="center"><a href=""><img src="https://github.com/SANGDOLEE/TodaysFood/assets/108053426/91719991-c1b2-466a-9d01-e2c7205941e6" width="400px;" alt=""/><br /><sub><b></b></sub></a></td>
+      <td align="center"><a href=""><img src="https://github.com/SANGDOLEE/TodaysFood/assets/108053426/91719991-c1b2-466a-9d01-e2c7205941e6" width="310px;" alt=""/><br /><sub><b></b></sub></a></td>
     </tr>
    </tbody>
 </table>
