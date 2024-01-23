@@ -47,7 +47,7 @@
 <table>
    <tbody>
     <tr>
-      <td colspan="1" align="center"><b>온보딩 화면</b></td>
+      <td colspan="1" align="center"><b> 시작 화면 </b></td>
     </tr>
     <tr>
       <td align="center"><a href=""><img src="https://github.com/SANGDOLEE/MiniProject_BrainBuddy/assets/108053426/860519d8-f613-4076-9282-d9f8f67401cd" width="400px;" alt=""/><br /><sub><b></b></sub></a></td>
@@ -57,9 +57,13 @@
 <table>
   <tbody>
     <tr>
-      <td colspan="1" align="center"><b>메인 화면</b></td>
+      <td colspan="1" align="center"><b>메인 화면 1</b></td>
+      <td colspan="1" align="center"><b>메인 화면 2</b></td>
+      <td colspan="1" align="center"><b>메인 화면 3</b></td>
     </tr>
     <tr>
+      <td align="center"><a href=""><img src="https://github.com/SANGDOLEE/MiniProject_BrainBuddy/assets/108053426/9dde47bb-53b5-4acc-bad9-35bb3f62f63d" width="400px;" alt=""/><br /><sub><b></b></sub></a></td>
+      <td align="center"><a href=""><img src="https://github.com/SANGDOLEE/MiniProject_BrainBuddy/assets/108053426/9dde47bb-53b5-4acc-bad9-35bb3f62f63d" width="400px;" alt=""/><br /><sub><b></b></sub></a></td>
       <td align="center"><a href=""><img src="https://github.com/SANGDOLEE/MiniProject_BrainBuddy/assets/108053426/9dde47bb-53b5-4acc-bad9-35bb3f62f63d" width="400px;" alt=""/><br /><sub><b></b></sub></a></td>
     </tr>
   </tbody>
@@ -68,28 +72,14 @@
 <table>
    <tbody>
    <tr>
-      <td colspan="1" align="center"><b>학습추가 화면 1</b></td>
-      <td colspan="1" align="center"><b>학습추가 화면 2</b></td>
+      <td colspan="1" align="center"><b> 나의 메뉴판 화면 </b></td>
     </tr>
     <tr>
       <td align="center"><a href=""><img src="https://github.com/SANGDOLEE/MiniProject_BrainBuddy/assets/108053426/8e985fe3-8bf7-42b2-a3e0-220a996202f5" width="400px;" alt=""/><br /><sub><b></b></sub></a></td>
-      <td align="center"><a href=""><img src="https://github.com/SANGDOLEE/MiniProject_BrainBuddy/assets/108053426/65ed4a42-f112-4636-901b-a95cc00b9c8c" width="400px;" alt=""/><br /><sub><b></b></sub></a></td>
     </tr>
    </tbody>
 </table>
-<!-- 네번째 테이블 -->
-<table>
-   <tbody>
-   <tr>
-      <td colspan="1" align="center"><b>학습 화면 1</b></td>
-      <td colspan="1" align="center"><b>학습 화면 2</b></td>
-    </tr>
-    <tr>
-      <td align="center"><a href=""><img src="https://github.com/SANGDOLEE/MiniProject_BrainBuddy/assets/108053426/4762a6e8-339b-461f-a836-39a5927b1016" width="400px;" alt=""/><br /><sub><b></b></sub></a></td>
-      <td align="center"><a href=""><img src="https://github.com/SANGDOLEE/MiniProject_BrainBuddy/assets/108053426/51ecfa8b-f4d6-4116-8d4a-f30dd17c66ec" width="400px;" alt=""/><br /><sub><b></b></sub></a></td>
-    </tr>
-   </tbody>
-</table>
+
 
 <br/>
 
